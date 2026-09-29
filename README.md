@@ -12,7 +12,7 @@ This project tests three fields: **First Name**, **Email** and **About Yourself*
 - Email: type a value, check it, and validate the email format.
 - About Yourself (text area): type a value and check it.
 
-Form URL: PASTE_YOUR_FORM_LINK_HERE
+Form URL:  "http://app.cloudqa.io/home/AutomationPracticeForm";
 
 ## Project Structure
 
@@ -98,12 +98,3 @@ Only these three fields are treated as required. No other field is tested or req
 - Cause: the label text in the code does not match the page, or the page did not load.
 - Fix: check the spelling of the label and the form link.
 
-**5. `Cannot read properties of null (reading 'addEventListener')`**
-- Cause: an element `id` was changed in the HTML (for example, `fname` to `xyz`), but the JavaScript still used the old `id`.
-- Fix: update the JavaScript to use the new `id`.
-  ```js
-  // Before
-  document.getElementById("fname").addEventListener(...)
-  // After
-  document.getElementById("xyz").addEventListener(...)
-  ```
