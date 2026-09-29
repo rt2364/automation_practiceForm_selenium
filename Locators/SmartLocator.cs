@@ -1,19 +1,15 @@
-
-        using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace CloudQAAutomation.Locators
-{
-    public class SmartLocator
-    {
+namespace CloudQAAutomation.Locators{
+    public class SmartLocator{
         private readonly IWebDriver _driver;
         private readonly WebDriverWait _wait;
 
-        public SmartLocator(IWebDriver driver)
-        {
+        public SmartLocator(IWebDriver driver){
             _driver = driver;
             _wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             _wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
@@ -21,8 +17,7 @@ namespace CloudQAAutomation.Locators
 
         public IWebElement FindField(string labelText, params string[] tags)
         {
-            if (tags == null || tags.Length == 0)
-            {
+            if (tags == null || tags.Length == 0)   {
                 tags = new[] { "input", "textarea", "select" };
             }
 
